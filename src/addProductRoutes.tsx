@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { StackNavigationState, TypedNavigator } from '@react-navigation/native';
 import { TouchableOpacity, Text, Button } from 'react-native';
 import { HomeParamList, HomeStackNavProps } from './Stacks/HomeStack/HomeParamList';
-import { SearchParamList } from './Stacks/SearchStack/SearchParamList';
+import { SearchParamList, SearchStackNavProps } from './Stacks/SearchStack/SearchParamList';
 import Center from './components/Center';
 
-function Product({ navigation, route }: HomeStackNavProps<'Product'>) {
+function Product({ navigation, route }: HomeStackNavProps<'Product'> | SearchStackNavProps<'Product'>) {
   return (
     <Center>
       <Text>{route.params.name}</Text>
