@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import React, { useState, createContext } from 'react';
-import { Text, View } from 'react-native';
 
 type User = null | { username: string };
 

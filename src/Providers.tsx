@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import AuthProvider from './AuthProvider';
+import AuthProvider from './Stacks/AuthStack/AuthProvider';
 import Routes from './Routes';
 
 interface ProvidersProps {}

@@ -1,32 +1,13 @@
-import React, { useContext } from 'react';
-import { Button, Text, View } from 'react-native';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, EvilIcons, Ionicons } from '@expo/vector-icons';
 import { AppParamList } from './AppParamList';
-import Center from './Center';
-import { AuthContext } from './AuthProvider';
+import HomeStack from '../../Stacks/HomeStack/HomeStack';
+import SearchStack from '../../Stacks/SearchStack/SearchStack';
 
 interface AppTabsProps {}
 
 const Tabs = createBottomTabNavigator<AppParamList>();
-
-const Home = () => {
-  const { logout } = useContext(AuthContext);
-  return (
-    <Center>
-      <Text>Home</Text>
-      <Button title="logout" onPress={() => logout()} />
-    </Center>
-  );
-};
-
-const Search = () => {
-  return (
-    <Center>
-      <Text>Search</Text>
-    </Center>
-  );
-};
 
 export const AppTabs: React.FC<AppTabsProps> = ({}) => {
   return (
@@ -52,8 +33,8 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Tabs.Screen name="Home" component={Home} />
-      <Tabs.Screen name="Search" component={Search} />
+      <Tabs.Screen name="Home" component={HomeStack} />
+      <Tabs.Screen name="Search" component={SearchStack} />
     </Tabs.Navigator>
   );
 };
